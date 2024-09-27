@@ -8,6 +8,20 @@
   background-color: #141D2F;
   /* Dunkler Hintergrund */
 
+  .scroll-text {
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    bottom: 100px;
+    right: 30px;
+    font-weight: 0px;
+    transform: rotate(90deg);
+    /* Drehe den Text um 90 Grad */
+    font-size: 23px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+
   .hero-content {
     position: relative; // Setze die hero-content relativ, um den z-index zu steuern
     z-index: 10;
