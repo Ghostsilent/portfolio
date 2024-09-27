@@ -5,11 +5,14 @@
   justify-content: center;
   align-items: center;
   background-color: #141D2F;
+  overflow: hidden; 
+  margin-top: 100px;
+
 
   .scroll-text {
     font-family: 'Poppins', sans-serif;
     position: absolute;
-    bottom: 100px;
+    bottom: 67px;
     right: 30px;
     font-weight: 0px;
     transform: rotate(90deg);
