@@ -17,8 +17,10 @@
     /* flex-direction: column; */
 
   }
+
   .cta-container {
-    margin-top: 7rem; /* Abstand zwischen Schriften und Button */
+    margin-top: 7rem;
+    /* Abstand zwischen Schriften und Button */
   }
 
   .hero-left {
@@ -106,6 +108,40 @@
     /* object-fit: cover; */
 
   }
+
+  /* Neuer Bereich für den grünen Strich und die Social Icons */
+  .social-section {
+    position: absolute;
+    bottom: 20px; // Abstand von unten
+    left: -2px; // Abstand von der linken Seite
+    display: flex;
+    align-items: center;
+
+    .green-line {
+      width: 100px;
+      height: 4px;
+      background-color: #70E61C; // Grüner Strich
+      margin-right: 20px; // Abstand zwischen Strich und Icons
+      border-radius: 4px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px; // Abstand zwischen den Icons
+    }
+
+    .social-icon {
+      width: 30px; // Icon-Größe
+      height: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1); // Icons werden beim Hover-Effekt größer
+      }
+    }
+  }
+
 }
 
 
