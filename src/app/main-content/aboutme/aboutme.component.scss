@@ -1,0 +1,70 @@
+.about-me {
+    padding: 100px 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #141D2F;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+
+}
+
+.about-text {
+    font-family: 'Poppins', sans-serif;
+    flex: 1;
+    color: #ffffff;
+    margin-left: 0px;
+
+
+    h2 {
+        font-size: 90px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .about-details p {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+
+        .icon {
+            margin-right: 10px;
+            width: 35px;
+            height: 35px;
+        }
+    }
+}
+
+
+.about-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1;
+
+    .person-img {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .background {
+        max-width: 100%;
+        height: auto;
+
+    }
+}
+
