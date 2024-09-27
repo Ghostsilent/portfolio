@@ -1,0 +1,132 @@
+/* hero.component.scss */
+.hero-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #141D2F;
+  /* Dunkler Hintergrund */
+
+  .hero-content {
+    position: relative; // Setze die hero-content relativ, um den z-index zu steuern
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+
+  }
+  .cta-container {
+    margin-top: 7rem; /* Abstand zwischen Schriften und Button */
+  }
+
+  .hero-left {
+    margin-right: 20px;
+    align-items: center;
+    /* Vertikale Zentrierung der gesamten Spalte */
+
+
+    .vertical-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  .hero-center {
+    text-align: center;
+
+    h1 {
+      color: white;
+      font-size: 128px;
+      /* Änderung der Schriftgröße */
+      font-family: 'Poppins', sans-serif;
+      /* Hinzufügen der Schriftart */
+      margin: 0;
+    }
+
+    h2 {
+      color: #9747FF;
+      /* Lila Farbe */
+      font-size: 60px;
+      /* Änderung der Schriftgröße */
+      font-family: 'Poppins', sans-serif;
+      /* Hinzufügen der Schriftart */
+      margin: 10px 0;
+      text-align: left;
+      /* Links ausrichten */
+      font-weight: 1;
+    }
+
+    .cta-button {
+      margin-top: 20px;
+      font-family: 'Poppins', sans-serif;
+      width: 165px;
+      height: 58px;
+      padding: 15px 30px; // Oben/Unten: 15px, Rechts/Links: 30px
+      font-size: 1.5rem;
+      background-color: #70E61C;
+      /* Grüner Button */
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease; // Transition für Größe und Farbe
+
+      &:hover {
+        background-color: #9747FF;
+        transform: scale(1.2); // Vergrößert den Button leicht (um 10%)
+      }
+    }
+  }
+
+  /* Platzhalter für die Farbkleckse */
+  .color-blob {
+    position: absolute;
+    width: 800px; // Größe des Bildes
+    height: 800px;
+    object-fit: cover;
+  }
+
+  .left-blob {
+    left: 130px; // Linker Rand
+    transform: translateX(-50%); // Damit es zentriert wird
+  }
+
+  .right-blob {
+    right: 0px;
+    transform: translateX(60%); // Damit es zentriert wird
+    bottom: 10%;
+    height: 800px;
+    width: 800px;
+    transform: translateX(55%);
+    /* pointer-events: none;  */
+    /* object-fit: cover; */
+
+  }
+}
+
+
+.intro-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.intro {
+  font-family: 'Poppins', sans-serif;
+  font-size: 90px;
+  letter-spacing: 0.1em;
+  color: white;
+  writing-mode: vertical-rl;
+  /* Vertikale Ausrichtung von oben nach unten */
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  /* Damit es nicht auf dem Kopf steht */
+  height: auto;
+  /* Sicherstellen, dass die Schriftgröße die Höhe bestimmt */
+
+}
