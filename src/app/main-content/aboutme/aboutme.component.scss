@@ -2,6 +2,7 @@
     padding: 100px 110px;
     display: flex;
     justify-content: center;
+    flex-direction: column; // Layout vertikal anordnen, damit alles untereinander ist
     align-items: center;
     background-color: #141D2F;
 }
@@ -9,6 +10,7 @@
 .about-content {
     display: flex;
     justify-content: space-between;
+    flex-direction: row; // Text und Bild nebeneinander
     align-items: center;
     width: 100%;
     gap: 50px;
@@ -68,3 +70,18 @@
     }
 }
 
+.background-curve {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    clip-path: inset(0 0 300px 0); 
+    width: 100vw;
+    overflow: hidden;
+
+
+    .bogen-img {
+        width: 100%;
+        height: auto;
+        width: 100vw; 
+    }
+}
