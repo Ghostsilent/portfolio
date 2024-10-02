@@ -1,0 +1,105 @@
+.skills-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #141D2F; // Hintergrundfarbe anpassbar
+  padding: 50px;
+  gap: 100px;
+}
+
+.skills-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 80px;
+}
+
+.logos-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo-group:nth-child(3) {
+  justify-content: flex-start; // Sorgt dafür, dass Scrum und Material Design links ausgerichtet sind
+}
+
+
+.logo-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.logo-item {
+  text-align: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+p {
+  color: white;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+}
+
+
+.skills-heading {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  h1 {
+    /* margin-right: 10px; */
+    color: white;
+    font-size: 90px;
+    font-family: 'Poppins', sans-serif;
+
+  }
+
+  .blue-line {
+    border-radius: 4px;
+    height: 4px;
+    background-color: #1CDAE6;
+    flex-grow: 1;
+    /* Strich füllt den restlichen Raum bis zum rechten Rand */
+  }
+}
+
+.skills-description p {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.skills-description span {
+  color: #9747FF; // Blau für "another skill?"
+}
+
+.get-in-touch button {
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  width: 165px;
+  height: 58px;
+  padding: 15px 30px;
+  font-size: 19px;
+  background-color: #70E61C;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: #9747FF;
+    transform: scale(1.2);
+  }
+}
+
+/* Sicherstellen, dass das letzte Logo alleine in der vierten Zeile steht */
+.logo-item:nth-child(11) {
+  text-align: left;
+  /* Links ausrichten */
+}

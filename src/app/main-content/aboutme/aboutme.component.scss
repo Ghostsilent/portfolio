@@ -2,7 +2,7 @@
     padding: 100px 110px;
     display: flex;
     justify-content: center;
-    flex-direction: column; // Layout vertikal anordnen, damit alles untereinander ist
+    flex-direction: column; 
     align-items: center;
     background-color: #141D2F;
 }
@@ -10,7 +10,7 @@
 .about-content {
     display: flex;
     justify-content: space-between;
-    flex-direction: row; // Text und Bild nebeneinander
+    flex-direction: row; 
     align-items: center;
     width: 100%;
     gap: 50px;
