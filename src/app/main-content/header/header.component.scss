@@ -1,7 +1,5 @@
 @media (max-width: 830px) {
-  .header {
-    padding: 20px;
-  }
+
 
   .burger-menu {
     display: flex;
@@ -10,14 +8,14 @@
     width: 30px;
     height: 21px;
     cursor: pointer;
+  }
 
-    span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background-color: #ffffff;
-      border-radius: 2px;
-    }
+  .burger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
   }
 
   .header .nav {
@@ -72,6 +70,10 @@
 
 .header .nav ul li a:hover {
   color: #70E61C;
+  text-decoration: underline;
+  text-decoration-color: #A020F0;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
 }
 
 .burger-menu {
@@ -81,6 +83,10 @@
 @media (max-width: 830px) {
   .burger-menu {
     display: flex;
+  }
+
+  .header{
+    padding: 37px 33px
   }
 }
 
