@@ -1,42 +1,86 @@
+@media (max-width: 830px) {
+  .header {
+    padding: 20px;
+  }
+
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 2px;
+    }
+  }
+
+  .header .nav {
+    display: none;
+  }
+
+  .nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #141D2F;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav.open ul {
+    flex-direction: column;
+    padding: 0;
+    gap: 15px;
+  }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 37px 100px;
-  background-color: #141D2F; 
+  background-color: #141D2F;
+}
 
+.header .logo .name {
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
 
-  .logo {
-    .name {
-      font-size: 34px;
-      font-weight: bold;
-      color: #ffffff; 
-      font-family: 'Poppins', sans-serif;
+.header .nav ul {
+  list-style: none;
+  display: flex;
+  gap: 29px;
+}
 
-    }
-  }
+.header .nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+}
 
-  .nav {
-    ul {
-      list-style: none;
-      display: flex;
-      gap: 29px;
+.header .nav ul li a:hover {
+  color: #70E61C;
+}
 
-      li {
-        a {
-          color: #ffffff; 
-          text-decoration: none;
-          font-size: 23px;
-          font-weight: 1;
-          font-family: 'Poppins', sans-serif;
+.burger-menu {
+  display: none;
+}
 
-
-          &:hover {
-            color: #70E61C; 
-          }
-        }
-      }
-    }
+@media (max-width: 830px) {
+  .burger-menu {
+    display: flex;
   }
 }
 
@@ -44,8 +88,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%; 
-  z-index: 1000; 
-  background-color: #141D2F; 
+  width: 100%;
+  z-index: 1000;
+  background-color: #141D2F;
 }
-

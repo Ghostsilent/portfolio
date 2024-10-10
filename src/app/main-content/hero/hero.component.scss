@@ -8,7 +8,6 @@
   overflow: hidden; 
   margin-top: 100px;
 
-
   .scroll-text {
     font-family: 'Poppins', sans-serif;
     position: absolute;
@@ -26,9 +25,8 @@
     position: relative;
     z-index: 10;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-
   }
 
   .cta-container {
@@ -38,7 +36,6 @@
   .hero-left {
     margin-right: 20px;
     align-items: center;
-
 
     .vertical-text {
       writing-mode: vertical-rl;
@@ -106,12 +103,11 @@
     height: 800px;
     width: 800px;
     transform: translateX(55%);
-
   }
 
   .social-section {
     position: absolute;
-    bottom: 20px; //
+    bottom: 20px;
     left: -2px;
     display: flex;
     align-items: center;
@@ -141,14 +137,12 @@
       }
     }
   }
-
 }
-
 
 .intro-text {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
 }
 
@@ -161,5 +155,4 @@
   text-orientation: mixed;
   transform: rotate(180deg);
   height: auto;
-
 }

@@ -14,15 +14,13 @@
     align-items: center;
     width: 100%;
     gap: 50px;
-
 }
 
 .about-text {
     font-family: 'Poppins', sans-serif;
     flex: 1;
     color: #ffffff;
-    margin-left: 0px;
-
+    margin-left: 0;
 
     h2 {
         font-size: 90px;
@@ -34,20 +32,21 @@
         margin-bottom: 20px;
     }
 
-    .about-details p {
-        display: flex;
-        align-items: center;
-        font-size: 1.2rem;
-        margin-bottom: 15px;
+    .about-details {
+        p {
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
 
-        .icon {
-            margin-right: 10px;
-            width: 35px;
-            height: 35px;
+            .icon {
+                margin-right: 10px;
+                width: 35px;
+                height: 35px;
+            }
         }
     }
 }
-
 
 .about-image-container {
     display: flex;
@@ -64,9 +63,8 @@
     }
 
     .background {
-        max-width: 100%;
+        width: 100%;
         height: auto;
-
     }
 }
 
@@ -75,7 +73,6 @@
     justify-content: center;
     width: 100%;
     overflow: hidden;
-
 
     .bogen-img {
         width: 100%;
