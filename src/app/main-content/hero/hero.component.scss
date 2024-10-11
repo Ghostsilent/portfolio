@@ -188,7 +188,7 @@
 
     .intro {
       font-size: 30px !important;
-      margin-top: 7px !important; 
+      margin-top: 7px !important;
     }
 
     .left-blob {
@@ -203,12 +203,19 @@
       right: 0px !important;
     }
 
-    .hero-container{
-      margin-top: 5px;
+    .social-icons{
+      gap: 30px !important;
     }
+
+    .social-section {
+      gap: 10px;
+    }
+
+    margin-top: 5px;
+
   }
 
-  
+
   @media (max-width: 500px) {
 
     .hero-center h2 {
@@ -232,7 +239,7 @@
 
     .intro {
       font-size: 45px;
-      margin-top: 7px; 
+      margin-top: 7px;
     }
   }
 }
