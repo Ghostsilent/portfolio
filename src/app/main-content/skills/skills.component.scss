@@ -1,8 +1,7 @@
 .skills-section {
   display: flex;
   justify-content: space-between;
-  background-color: #141D2F; // Hintergrundfarbe anpassbar
-  /* padding: 50px; */
+  background-color: #141D2F;
   gap: 180px;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -25,7 +24,7 @@
 }
 
 .logo-group:nth-child(3) {
-  justify-content: flex-start; // Sorgt dafür, dass Scrum und Material Design links ausgerichtet sind
+  justify-content: flex-start;
 }
 
 .logo-group {
@@ -36,11 +35,11 @@
 
 .logo-item {
   text-align: center;
+}
 
-  img {
-    width: 60px;
-    height: 60px;
-  }
+.logo-item img {
+  width: 60px;
+  height: 60px;
 }
 
 p {
@@ -52,44 +51,43 @@ p {
 
 .skills-heading {
   display: flex;
-  align-items: center; /* Zentriere die Items vertikal */
+  align-items: center;
   gap: 32px;
   margin-bottom: 50px;
+}
 
-  h1 {
-    /* margin-right: 10px; */
-    color: white;
-    font-size: 90px;
-    font-family: 'Poppins', sans-serif;
+.skills-heading h1 {
+  color: white;
+  font-size: 90px;
+  font-family: 'Poppins', sans-serif;
+}
 
-  }
-
-  .blue-line {
-    border-radius: 4px;
-    height: 4px;
-    background-color: #1CDAE6;
-    flex-grow: 1;
-    /* Strich füllt den restlichen Raum bis zum rechten Rand */
-  }
+.skills-heading .blue-line {
+  border-radius: 4px;
+  height: 4px;
+  background-color: #1CDAE6;
+  flex-grow: 1;
 }
 
 .skills-description p {
   color: white;
-  margin-bottom: 15px;
   padding-right: 50px;
   margin-bottom: 40px;
   font-size: 16px;
 }
 
 .skills-description span {
-  color: #9747FF; // Blau für "another skill?"
+  color: #9747FF;
 }
 
 .skills-description h2 {
   font-size: 32px;
   color: white;
   margin-bottom: 20px;
-  
+}
+
+.get-in-touch {
+  text-align: center;
 }
 
 .get-in-touch button {
@@ -97,90 +95,138 @@ p {
   font-family: 'Poppins', sans-serif;
   width: 165px;
   height: 58px;
-  /* padding: 15px 30px; */
   font-size: 23px;
   background-color: #70E61C;
   color: white;
-  font-weight: 1px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
-
-  &:hover {
-    background-color: #9747FF;
-    transform: scale(1.2);
-  }
 }
 
-/* Sicherstellen, dass das letzte Logo alleine in der vierten Zeile steht */
+.get-in-touch button:hover {
+  background-color: #9747FF;
+  transform: scale(1.2);
+}
+
 .logo-item:nth-child(11) {
   text-align: left;
-  /* Links ausrichten */
 }
 
 .logo-item {
   display: inline-block;
   position: relative;
-
-  img {
-    transition: transform 0.3s ease-in-out; /* Animation für die Bewegung beim Hovern nur für das Bild */
-  }
-
-  img:hover {
-    animation: hoverUp 0.5s ease-out forwards; /* Leichtes Hüpfen des Logos nach oben */
-  }
-
-  img:not(:hover) {
-    animation: hoverDown 0.3s ease-in forwards; /* Sofortiges Herunterfallen des Logos */
-  }
 }
 
-/* Keyframes für das Hüpfen nach oben */
+.logo-item img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo-item img:hover {
+  animation: hoverUp 0.5s ease-out forwards;
+}
+
+.logo-item img:not(:hover) {
+  animation: hoverDown 0.3s ease-in forwards;
+}
+
 @keyframes hoverUp {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-20px); /* Bewegt das Logo 10px nach oben */
+    transform: translateY(-20px);
   }
   100% {
-    transform: translateY(0px); /* Lässt das Logo etwas runterkommen */
+    transform: translateY(0px);
   }
 }
 
-/* Keyframes für das schnelle Herunterfallen */
 @keyframes hoverDown {
   0% {
-    transform: translateY(-5px); /* Startet von der leicht angehobenen Position */
+    transform: translateY(-5px);
   }
   100% {
-    transform: translateY(0); /* Fällt zurück zur ursprünglichen Position */
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1075px) {
   .skills-section {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  .skills-heading {
+    order: 1 !important;
+  }
+
+  .skills-description p:first-of-type {
+    order: 2 !important;
   }
 
   .logos-container {
+    order: 3 !important;
     padding-left: 20px;
   }
 
+  .skills-description h2 {
+    order: 4 !important;
+  }
+
+  .skills-description p:last-of-type {
+    order: 5 !important;
+  }
+
+  .get-in-touch {
+    order: 6 !important;
+    text-align: center;
+  }
+
   .skills-heading h1 {
-    font-size: 50px;
+    font-size: 70px;
   }
 
   .skills-heading .blue-line {
-    height: 2px;
+    height: 3px;
   }
 
   .logo-group {
-    gap: 40px;
+    gap: 60px;
+  }
+
+  .logo-item img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .get-in-touch button {
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .skills-section {
+    gap: 15px;
+  }
+
+  .skills-heading h1 {
+    font-size: 60px;
+  }
+
+  .logo-item img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 580px) {
+  .skills-heading h1 {
+    font-size: 55px;
   }
 
   .logo-item img {
@@ -192,5 +238,35 @@ p {
     width: 130px;
     height: 45px;
     font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    gap: 10px;
+  }
+
+  .skills-heading h1 {
+    font-size: 50px;
+  }
+
+  .logo-item img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 320px) {
+  .skills-section {
+    gap: 5px;
+  }
+
+  .skills-heading h1 {
+    font-size: 45px;
+  }
+
+  .logo-item img {
+    width: 30px;
+    height: 30px;
   }
 }
