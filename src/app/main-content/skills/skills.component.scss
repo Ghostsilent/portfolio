@@ -23,6 +23,14 @@
   box-sizing: border-box;
 }
 
+.logos-container-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+
 .logo-group:nth-child(3) {
   justify-content: flex-start;
 }
@@ -30,7 +38,7 @@
 .logo-group {
   display: flex;
   justify-content: space-between;
-  gap: 80px;
+  gap: 40px;
 }
 
 .logo-item {
@@ -67,6 +75,14 @@ p {
   height: 4px;
   background-color: #1CDAE6;
   flex-grow: 1;
+}
+
+.skills-description {
+  width: 100%;
+  /* max-width: 800px; */
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .skills-description p {
@@ -134,9 +150,11 @@ p {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
@@ -146,42 +164,66 @@ p {
   0% {
     transform: translateY(-5px);
   }
+
   100% {
     transform: translateY(0);
   }
 }
 
 @media (max-width: 1075px) {
+  .logos-container {
+    display: none;
+  }
+
+  .logos-container-mobile .logo-item.firebase,
+  .logos-container-mobile .logo-item.git {
+    right: 18px;
+  }
+
+  .skills-content {
+    margin-bottom: 25px;
+  }
+  
+
+  .logos-container-mobile {
+    display: flex;
+  }
+
   .skills-section {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .skills-heading {
-    order: 1 !important;
+    order: 1;
+  }
+
+  .skills-description p {
+    padding-right: 0px;
   }
 
   .skills-description p:first-of-type {
-    order: 2 !important;
+    order: 2;
   }
 
-  .logos-container {
-    order: 3 !important;
+  .logos-container-mobile {
+    order: 3;
     padding-left: 20px;
+    gap: 20px;
   }
 
   .skills-description h2 {
-    order: 4 !important;
+    order: 4;
   }
 
   .skills-description p:last-of-type {
-    order: 5 !important;
+    order: 5;
   }
 
   .get-in-touch {
-    order: 6 !important;
+    order: 6;
     text-align: center;
   }
 
@@ -194,7 +236,7 @@ p {
   }
 
   .logo-group {
-    gap: 60px;
+    gap: 40px;
   }
 
   .logo-item img {
@@ -206,6 +248,12 @@ p {
     width: 140px;
     height: 50px;
     font-size: 20px;
+  }
+}
+
+@media (min-width: 1076px) {
+  .logos-container-mobile {
+    display: none;
   }
 }
 
@@ -246,8 +294,16 @@ p {
     gap: 10px;
   }
 
+  .skills-description p {
+    font-size: 12px;
+  }
+
   .skills-heading h1 {
     font-size: 50px;
+  }
+
+  .logo-group {
+    gap: 25px;
   }
 
   .logo-item img {
