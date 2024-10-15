@@ -1,19 +1,27 @@
 <div class="contact-section">
     <div class="contact-header">
-        <h1>Contact</h1>
+        <div>
+            <h1>Contact</h1>
+        </div>
         <div class="green-line"></div>
     </div>
-  
+
     <div class="contact-content">
         <div class="problem-description">
+            <!-- <div class="green-line"></div> -->
+            <div>
             <h2>Got a problem to solve?</h2>
-            <div class="green-line"></div>
+        </div>
             <p>
-                Contact me through this form. I am interested in hearing from you, learning your ideas, and contributing to your projects with my work.<br />
+                Contact me through this form. I am interested in hearing from you, learning your ideas, and contributing
+                to your projects with my work.<br />
                 Need a Frontend developer? <a href="#">Contact now!</a>
             </p>
         </div>
-  
+
+        <img src="./assets/img/purplecontact.png" alt="Background" class="background-img">
+
+
         <div class="contact-form">
             <form>
                 <input type="text" name="name" placeholder="Your name" required />
@@ -21,7 +29,8 @@
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <div class="privacy-policy">
                     <input type="checkbox" id="policy" required />
-                    <label for="policy">I've read the privacy policy, and agree to the processing of my data as outlined.</label>
+                    <label for="policy">I've read the <span class="privacy-policy-highlight">privacy policy</span>, and agree to the processing of my data as outlined.</label>
+
                 </div>
                 <button type="submit">Send message :)</button>
             </form>

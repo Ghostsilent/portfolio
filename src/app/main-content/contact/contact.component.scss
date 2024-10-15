@@ -1,11 +1,12 @@
-/* Contact Component Styles */
-
 .contact-section {
   padding: 50px;
   background-color: #141D2F;
+  animation: fade-in 2s ease-in-out;
 }
 
 .contact-header {
+  display: flex;
+  align-items: center;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -15,19 +16,60 @@
   font-weight: bold;
   color: white;
   font-size: 96px;
+  left: 20%;
+  animation: color-change 5s infinite alternate;
+}
+
+@keyframes color-change {
+  0% {
+    color: #4caf50;
+  }
+  50% {
+    color: #9747FF;
+  }
+  100% {
+    color: #ff6ec7;
+  }
 }
 
 .green-line {
-  width: 50px;
+  width: 100%;
   height: 5px;
   background-color: #4caf50;
-  margin: 10px auto;
+  margin: 0 20px;
+  align-self: center;
 }
 
 .contact-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 0 30px;
+}
+
+@media (max-width: 1075px) {
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .contact-header {
+    order: 1;
+  }
+
+  .problem-description {
+    order: 2;
+    margin-right: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-form {
+    order: 3;
+    max-width: 100%;
+    margin-top: 20px;
+  }
 }
 
 .problem-description {
@@ -40,22 +82,66 @@
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: white;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  animation: neon-underline 3s infinite linear;
+}
+
+@keyframes neon-underline {
+  0% {
+    text-decoration-color: #4caf50;
+  }
+  25% {
+    text-decoration-color: #9747FF;
+  }
+  50% {
+    text-decoration-color: #70E61C;
+  }
+  75% {
+    text-decoration-color: #ff6ec7;
+  }
+  100% {
+    text-decoration-color: #4caf50;
+  }
 }
 
 .problem-description p {
   font-size: 1rem;
   line-height: 1.5;
   color: white;
+  animation: text-fade 4s infinite alternate;
+}
+
+@keyframes text-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
 }
 
 .contact-form {
   flex: 1;
   max-width: 500px;
+  position: relative;
 }
 
 .contact-form form {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.background-img {
+  position: absolute;
+  /* top: 0; */
+  right: 0;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  z-index: 1; 
 }
 
 .contact-form input,
@@ -63,9 +149,18 @@
   margin-bottom: 15px;
   padding: 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 2px solid #9747FF;
   border-radius: 5px;
   box-sizing: border-box;
+  background-color: #141D2F;
+  color: white;
+  transition: border-color 0.5s, box-shadow 0.5s;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: #4caf50;
+  box-shadow: 0 0 10px #4caf50;
 }
 
 .contact-form textarea {
@@ -77,11 +172,51 @@
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+  animation: fade-in 2s ease-in-out;
 }
 
 .privacy-policy label {
   margin-left: 10px;
   font-size: 0.9rem;
+  color: white;
+  transition: color 0.5s;
+}
+
+.privacy-policy label:hover {
+  color: #70E61C;
+}
+
+.privacy-policy input[type="checkbox"] {
+  appearance: none;
+  width: 18px !important;
+  min-width: 18px;
+  height: 18px;
+  border: 2px solid #70E61C;
+  border-radius: 2px;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.privacy-policy input[type="checkbox"]:hover {
+  transform: scale(1.1);
+}
+
+.privacy-policy input[type="checkbox"]:checked {
+  background-color: #141D2F;
+}
+
+.privacy-policy input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 5px;
+  height: 10px;
+  border: solid #70E61C;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .contact-form button {
@@ -92,9 +227,27 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .contact-form button:hover {
   background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.privacy-policy-highlight {
+  color: #9747FF; /* Lila Farbe */
+  animation: highlight-pulse 2s infinite alternate;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    color: #9747FF;
+  }
+  50% {
+    color: #70E61C;
+  }
+  100% {
+    color: #ff6ec7;
+  }
 }
