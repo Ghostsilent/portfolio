@@ -72,6 +72,19 @@
   }
 }
 
+@media (max-width: 450px) {
+  .contact-header h1 {
+    font-size: 80px;
+  }
+}
+
+
+@media (max-width: 350px) {
+  .contact-header h1 {
+    font-size: 55px;
+  }
+}
+
 .problem-description {
   flex: 1;
   margin-right: 20px;
@@ -136,12 +149,12 @@
 
 .background-img {
   position: absolute;
-  /* top: 0; */
   right: 0;
-  width: 300px;
-  height: 300px;
+  width: 330px;
   object-fit: cover;
-  z-index: 1; 
+  z-index: 0;
+  overflow: hidden;
+  transform: translateX(27%);
 }
 
 .contact-form input,

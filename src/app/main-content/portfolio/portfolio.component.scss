@@ -223,3 +223,11 @@
       width: 90%;
   }
 }
+
+.background-image {
+  position: absolute;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
