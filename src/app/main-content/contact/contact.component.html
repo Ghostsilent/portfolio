@@ -1,7 +1,7 @@
 <div class="contact-section">
     <div class="contact-header">
         <div>
-            <h1>Contact</h1>
+            <h1>{{'contactt' | translate }}</h1>
         </div>
         <div class="green-line"></div>
     </div>
@@ -10,12 +10,11 @@
         <div class="problem-description">
             <!-- <div class="green-line"></div> -->
             <div>
-                <h2>Got a problem to solve?</h2>
+                <h2>{{'problem' | translate }}</h2>
             </div>
             <p>
-                Contact me through this form. I am interested in hearing from you, learning your ideas, and contributing
-                to your projects with my work.<br />
-                Need a Frontend developer? <a href="#">Contact now!</a>
+                {{'write' | translate }}<br />
+                {{'need' | translate }} <a href="#">{{'now' | translate }}</a>
             </p>
         </div>
 
@@ -29,11 +28,10 @@
                 <textarea name="message" placeholder="Your message" required></textarea>
                 <div class="privacy-policy">
                     <input type="checkbox" id="policy" required />
-                    <label for="policy">I've read the <span class="privacy-policy-highlight">privacy policy</span>, and
-                        agree to the processing of my data as outlined.</label>
+                    <label for="policy">{{'read' | translate }} <span class="privacy-policy-highlight">{{'police' | translate }}</span>{{'and' | translate }}</label>
 
                 </div>
-                <button type="submit">Send message :)</button>
+                <button type="submit">{{'message' | translate }}</button>
             </form>
         </div>
     </div>
