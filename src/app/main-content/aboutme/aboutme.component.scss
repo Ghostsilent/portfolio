@@ -1,19 +1,26 @@
 .about-me {
+    position: relative;
+    /* Ermöglicht absolute Positionierung der Kinder */
     padding: 100px 110px;
     display: flex;
     justify-content: center;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     background-color: #141D2F;
+    overflow: hidden;
+    /* Verhindert Überlaufen */
 }
 
 .about-content {
     display: flex;
     justify-content: space-between;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     width: 100%;
     gap: 50px;
+    position: relative;
+    z-index: 2;
+    /* Liegt über dem Hintergrundbild */
 }
 
 .about-text {
@@ -54,74 +61,103 @@
     align-items: center;
     position: relative;
     flex: 1;
+    z-index: 3;
+    /* Liegt über dem Inhalt und dem Hintergrund */
 
     .person-img {
-        position: absolute;
-        z-index: 3;
-        width: 100%;
-        max-width: 300px;
+        transform: translateX(10%);
+        position: relative;
+        z-index: 1;
+        /* width: 100%; */
+        max-width: 430px;
         top: 50%;
-        transform: translateY(-50%);
     }
 
     .background {
+        position: absolute;
+        top: 0;
+        left: -1px;
         width: 100%;
         height: auto;
-        position: relative;
-        z-index: 1;
+        z-index: 0;
+        transform: translateY(13%)
     }
 }
 
+/* Hintergrundbild als CSS-Hintergrund */
 .background-curve {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    overflow: hidden;
-
-    .bogen-img {
-        width: 100%;
-        height: auto;
-    }
+    height: 283px;
+    z-index: 4;
+    background-image: url('./../../../assets/img/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+@media (max-width: 1111px) {
+    .background-curve {
+      height: 225px; /* Höhe auf 200px setzen ab 1111px Breite */
+    }
+  }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
     .about-me {
-        padding: 50px 40px;
+      padding: 50px 40px;
     }
-
+  
     .about-content {
-        /* flex-direction: column; */
-        gap: 30px;
+      gap: 30px;
     }
-
+  
     .about-text {
-        h2 {
-            font-size: 2.5rem;
-        }
-
+      h2 {
+        font-size: 2.5rem;
+      }
+  
+      p {
+        font-size: 1rem;
+      }
+  
+      .about-details {
         p {
-            font-size: 1rem;
+          font-size: 1rem;
+  
+          .icon {
+            width: 25px;
+            height: 25px;
+          }
         }
-
-        .about-details {
-            p {
-                font-size: 1rem;
-
-                .icon {
-                    width: 25px;
-                    height: 25px;
-                }
-            }
-        }
+      }
     }
-
+  
     .about-image-container {
-        .person-img {
-            max-width: 250px;
-        }
+      .person-img {
+        max-width: 352px;
+        width: 336px;
+      }
     }
-}
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: -1px;
+        width: 109%;
+        height: auto;
+        z-index: 0;
+        transform: translateY(22%);
+      }
+      
+  
+    /* Hintergrundbild-Höhe für größere Darstellung anpassen */
+    .background-curve {
+      height: 150px; /* Erhöht von 120px auf 150px */
+    }
+  }
+  
 
 @media (max-width: 800px) {
     .about-content {
@@ -130,6 +166,14 @@
 
     .about-image-container {
         margin-bottom: 20px;
+
+        .person-img {
+            max-width: 220px;
+        }
+    }
+
+    .background-curve {
+        height: 100px;
     }
 }
 
@@ -150,8 +194,12 @@
 
     .about-image-container {
         .person-img {
-            max-width: 200px;
+            max-width: 180px;
         }
+    }
+
+    .background-curve {
+        height: 80px;
     }
 }
 
@@ -185,5 +233,9 @@
         .person-img {
             max-width: 150px;
         }
+    }
+
+    .background-curve {
+        height: 60px;
     }
 }
