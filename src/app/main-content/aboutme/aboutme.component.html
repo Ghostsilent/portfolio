@@ -1,27 +1,38 @@
 <section id="about-me" class="about-me">
-    <div class="about-content">
-      <!-- Linker Bereich mit Text -->
-      <div class="about-text">
-        <h2>{{'aboutt' | translate }}</h2>
-        <p>{{'aboutmyself' | translate }}</p>
-        <p>{{'minitext' | translate }}</p>
-  
-        <!-- Weitere Absätze mit Icons als Bilder -->
-        <div class="about-details">
-          <p><img src="./assets/img/gps.png" alt="Location Icon" class="icon"> {{'flexibletext' | translate }}</p>
-          <p><img src="./assets/img/birne.png" alt="Lightbulb Icon" class="icon"> {{'openmind' | translate }}</p>
-          <p><img src="./assets/img/puzzle.png" alt="Tool Icon" class="icon"> {{'puzzle' | translate }}</p>
-        </div>
-      </div>
-  
-      <!-- Rechter Bereich mit Bild und farbigem Hintergrund -->
-      <div class="about-image-container">
-        <img src="./assets/img/protra.png" alt="Person Image" class="person-img">
-        <img src="./assets/img/29. photo shadows.png" alt="Purple Background" class="background purple">
+  <div class="about-content">
+    <!-- Linker Bereich mit Text -->
+    <div class="about-text">
+      <h2>{{ 'aboutt' | translate }}</h2>
+      <p>{{ 'aboutmyself' | translate }}</p>
+      <p>{{ 'minitext' | translate }}</p>
+
+      <!-- Weitere Absätze mit Icons als Bilder -->
+      <div class="about-details">
+        <p>
+          <img src="./assets/img/gps.png" alt="Location Icon" class="icon" />
+          {{ 'flexibletext' | translate }}
+        </p>
+        <p>
+          <img src="./assets/img/birne.png" alt="Lightbulb Icon" class="icon" />
+          {{ 'openmind' | translate }}
+        </p>
+        <p>
+          <img src="./assets/img/puzzle.png" alt="Tool Icon" class="icon" />
+          {{ 'puzzle' | translate }}
+        </p>
       </div>
     </div>
-  
-    <!-- Hintergrundbild am Ende der Sektion -->
-    <div class="background-curve"></div>
-  </section>
-  
+
+    <!-- Hintergrundkurve für kleinere Bildschirmgrößen -->
+    <div class="background-curve responsive"></div>
+
+    <!-- Rechter Bereich mit Bild und farbigem Hintergrund -->
+    <div class="about-image-container">
+      <img src="./assets/img/protra.png" alt="Person Image" class="person-img" />
+      <img src="./assets/img/29. photo shadows.png" alt="Purple Background" class="background purple" />
+    </div>
+  </div>
+
+  <!-- Hintergrundbild am Ende der Sektion (erste background-curve) -->
+  <div class="background-curve"></div>
+</section>

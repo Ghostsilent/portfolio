@@ -1,241 +1,282 @@
 .about-me {
-    position: relative;
-    /* Ermöglicht absolute Positionierung der Kinder */
-    padding: 100px 110px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #141D2F;
-    overflow: hidden;
-    /* Verhindert Überlaufen */
+  position: relative;
+  /* Ermöglicht absolute Positionierung der Kinder */
+  padding: 100px 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #141d2f;
+  overflow: hidden;
+  /* Verhindert Überlaufen */
+}
+
+/* Standard Hintergrundkurve */
+.background-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 283px;
+  z-index: 4;
+  background-image: url('./../../../assets/img/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Responsive Hintergrundkurve (zunächst versteckt) */
+.background-curve.responsive {
+  display: none;
+  /* Versteckt bei Bildschirmbreiten über 800px */
+  position: relative;
+  bottom: auto;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* Kann angepasst werden */
+  z-index: 4;
+  background-image: url('./../../../assets/img/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+  transform: translateY(-50px);
+  /* Bild nach oben verschieben */
 }
 
 .about-content {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    gap: 50px;
-    position: relative;
-    z-index: 2;
-    /* Liegt über dem Hintergrundbild */
+  display: flex;
+  flex-direction: row;
+  /* Elemente nebeneinander */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+  /* Liegt über dem Hintergrundbild */
 }
 
 .about-text {
-    font-family: 'Poppins', sans-serif;
-    flex: 1;
-    color: #ffffff;
-    margin-left: 0;
+  order: 1;
+  /* Text auf der linken Seite */
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  margin-left: 0;
 
-    h2 {
-        font-size: 90px;
-        margin-bottom: 20px;
-    }
+  h2 {
+    font-size: 90px;
+    margin-bottom: 20px;
+  }
 
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .about-details {
     p {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
 
-    .about-details {
-        p {
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-
-            .icon {
-                margin-right: 10px;
-                width: 35px;
-                height: 35px;
-            }
-        }
+      .icon {
+        margin-right: 10px;
+        width: 35px;
+        height: 35px;
+      }
     }
+  }
 }
 
 .about-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  order: 2;
+  /* Bild auf der rechten Seite */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  /* Liegt über dem Inhalt und dem Hintergrund */
+
+  .person-img {
+    transform: translateX(10%);
     position: relative;
-    flex: 1;
-    z-index: 3;
-    /* Liegt über dem Inhalt und dem Hintergrund */
+    z-index: 1;
+    max-width: 430px;
+    top: 50%;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    transform: translateY(13%);
+  }
+}
+
+@media (max-width: 1230px) {
+  .background-curve {
+    height: 233px;
+  }
+
+  .about-image-container {
 
     .person-img {
-        transform: translateX(10%);
-        position: relative;
-        z-index: 1;
-        /* width: 100%; */
-        max-width: 430px;
-        top: 50%;
+      transform: translateY(65px);
     }
 
     .background {
-        position: absolute;
-        top: 0;
-        left: -1px;
-        width: 100%;
-        height: auto;
-        z-index: 0;
-        transform: translateY(13%)
-    }
-}
-
-/* Hintergrundbild als CSS-Hintergrund */
-.background-curve {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 283px;
-    z-index: 4;
-    background-image: url('./../../../assets/img/background.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-@media (max-width: 1111px) {
-    .background-curve {
-      height: 225px; /* Höhe auf 200px setzen ab 1111px Breite */
+      top: 51px;
+      left: -30px;
     }
   }
+
+}
+
+@media (max-width: 960px) {
+  .about-text {
+
+    .about-details {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
-    .about-me {
-      padding: 50px 40px;
+@media (max-width: 800px) {
+  .about-me {
+    padding: 50px 40px;
+  }
+
+  /* Erste Hintergrundkurve ausblenden */
+  .background-curve {
+    display: none;
+  }
+
+  /* Responsive Hintergrundkurve einblenden */
+  .background-curve.responsive {
+    display: block;
+    order: 2;
+    height: 185px;
+    margin-bottom: 0;
+    width: 100vw;
+    transform: translateY(-130px);
+    /* Bild nach oben verschieben */
+  }
+
+  .about-content {
+    gap: 0px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    order: 3;
+    /* Text kommt nach Bild und Hintergrundkurve */
+    z-index: 3;
+
+    h2 {
+      font-size: 2.5rem;
     }
-  
-    .about-content {
-      gap: 30px;
+
+    p {
+      font-size: 1rem;
     }
-  
-    .about-text {
-      h2 {
-        font-size: 2.5rem;
-      }
-  
+
+    .about-details {
       p {
         font-size: 1rem;
-      }
-  
-      .about-details {
-        p {
-          font-size: 1rem;
-  
-          .icon {
-            width: 25px;
-            height: 25px;
-          }
+
+        .icon {
+          width: 25px;
+          height: 25px;
         }
       }
-    }
-  
-    .about-image-container {
-      .person-img {
-        max-width: 352px;
-        width: 336px;
-      }
-    }
-
-    .background {
-        position: absolute;
-        top: 0;
-        left: -1px;
-        width: 109%;
-        height: auto;
-        z-index: 0;
-        transform: translateY(22%);
-      }
-      
-  
-    /* Hintergrundbild-Höhe für größere Darstellung anpassen */
-    .background-curve {
-      height: 150px; /* Erhöht von 120px auf 150px */
     }
   }
-  
 
-@media (max-width: 800px) {
-    .about-content {
-        flex-direction: column-reverse;
+  .about-image-container {
+    order: 1;
+    /* Bild kommt zuerst */
+    margin-bottom: 20px;
+
+    .person-img {
+      max-width: 560px;
     }
-
-    .about-image-container {
-        margin-bottom: 20px;
-
-        .person-img {
-            max-width: 220px;
-        }
-    }
-
-    .background-curve {
-        height: 100px;
-    }
+  }
 }
 
 @media (max-width: 480px) {
-    .about-me {
-        padding: 30px 15px;
+  .about-me {
+    padding: 30px 15px;
+  }
+
+  .about-text {
+    h2 {
+      font-size: 1.8rem;
     }
 
-    .about-text {
-        h2 {
-            font-size: 1.8rem;
-        }
-
-        p {
-            font-size: 0.85rem;
-        }
+    p {
+      font-size: 0.85rem;
     }
+  }
 
-    .about-image-container {
-        .person-img {
-            max-width: 180px;
-        }
+  .about-image-container {
+    .person-img {
+      max-width: 255px;
     }
+  }
 
-    .background-curve {
-        height: 80px;
-    }
+  .background-curve.responsive {
+    height: 130px;
+    transform: translateY(-56px);
+  }
 }
 
 @media (max-width: 320px) {
-    .about-me {
-        padding: 20px 10px;
+  .about-me {
+    padding: 20px 10px;
+  }
+
+  .about-text {
+    h2 {
+      font-size: 1.5rem;
     }
 
-    .about-text {
-        h2 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            font-size: 0.75rem;
-        }
-
-        .about-details {
-            p {
-                font-size: 0.75rem;
-
-                .icon {
-                    width: 18px;
-                    height: 18px;
-                }
-            }
-        }
+    p {
+      font-size: 0.75rem;
     }
 
-    .about-image-container {
-        .person-img {
-            max-width: 150px;
-        }
-    }
+    .about-details {
+      p {
+        font-size: 0.75rem;
 
-    .background-curve {
-        height: 60px;
+        .icon {
+          width: 18px;
+          height: 18px;
+        }
+      }
     }
+  }
+
+  .about-image-container {
+    .person-img {
+      max-width: 150px;
+    }
+  }
+
+  .background-curve.responsive {
+    height: 98px;
+    transform: translateY(-11px);
+  }
 }
