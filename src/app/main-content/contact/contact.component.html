@@ -1,41 +1,99 @@
 <section id="contact">
     <div class="contact-section">
-        <div class="contact-header">
-            <div>
-                <h1>{{'contactt' | translate }}</h1>
-            </div>
-            <div class="green-line"></div>
+      <div class="contact-header">
+        <div>
+          <h1>{{ 'contactt' | translate }}</h1>
         </div>
-
-        <div class="contact-content">
-            <div class="problem-description">
-                <!-- <div class="green-line"></div> -->
-                <div>
-                    <h2>{{'problem' | translate }}</h2>
-                </div>
-                <p>
-                    {{'write' | translate }}<br />
-                    {{'need' | translate }} <a href="#">{{'now' | translate }}</a>
-                </p>
-            </div>
-
-            <img src="./assets/img/purplecontact.png" alt="Background" class="background-img">
-
-
-            <div class="contact-form">
-                <form>
-                    <input type="text" name="name" placeholder="Your name" required />
-                    <input type="email" name="email" placeholder="Your email" required />
-                    <textarea name="message" placeholder="Your message" required></textarea>
-                    <div class="privacy-policy">
-                        <input type="checkbox" id="policy" required />
-                        <label for="policy">{{'read' | translate }} <span class="privacy-policy-highlight">{{'police' |
-                                translate }}</span>{{'and' | translate }}</label>
-
-                    </div>
-                    <button type="submit">{{'message' | translate }}</button>
-                </form>
-            </div>
+        <div class="green-line"></div>
+      </div>
+  
+      <div class="contact-content">
+        <div class="problem-description">
+          <!-- Dein bestehender Inhalt -->
+          <div>
+            <h2>{{ 'problem' | translate }}</h2>
+          </div>
+          <p>
+            {{ 'write' | translate }}<br />
+            {{ 'need' | translate }} <a href="#">{{ 'now' | translate }}</a>
+          </p>
         </div>
+  
+        <img src="./assets/img/purplecontact.png" alt="Background" class="background-img" />
+  
+        <div class="contact-form">
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+            <!-- Name Eingabefeld -->
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              required
+              [(ngModel)]="formData.name"
+              #name="ngModel"
+              [class.invalid]="name.invalid && name.touched"
+            />
+            <!-- Fehlermeldung für Name -->
+            <div class="error-message" *ngIf="name.invalid && name.touched">
+              Bitte Name eingeben.
+            </div>
+  
+            <!-- E-Mail Eingabefeld -->
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              email
+              [(ngModel)]="formData.email"
+              #email="ngModel"
+              [class.invalid]="email.invalid && email.touched"
+            />
+            <!-- Fehlermeldung für E-Mail -->
+            <div class="error-message" *ngIf="email.invalid && email.touched">
+              Bitte eine gültige E-Mail-Adresse eingeben.
+            </div>
+  
+            <!-- Nachricht Eingabefeld -->
+            <textarea
+              name="message"
+              placeholder="Your message"
+              required
+              [(ngModel)]="formData.message"
+              #message="ngModel"
+              [class.invalid]="message.invalid && message.touched"
+            ></textarea>
+            <!-- Fehlermeldung für Nachricht -->
+            <div class="error-message" *ngIf="message.invalid && message.touched">
+              Bitte Nachricht eingeben.
+            </div>
+  
+            <!-- Datenschutzrichtlinie Checkbox -->
+            <div class="privacy-policy">
+              <input
+                type="checkbox"
+                id="policy"
+                required
+                [(ngModel)]="formData.policy"
+                name="policy"
+                #policy="ngModel"
+              />
+              <label for="policy">
+                {{ 'read' | translate }}
+                <span class="privacy-policy-highlight">{{ 'police' | translate }}</span>
+                {{ 'and' | translate }}
+              </label>
+            </div>
+            <!-- Fehlermeldung für Datenschutzrichtlinie -->
+            <div class="error-message" *ngIf="policy.invalid && policy.touched">
+              Bitte akzeptiere die Datenschutzrichtlinie.
+            </div>
+  
+            <!-- Absende-Button -->
+            <button type="submit">{{ 'message' | translate }}</button>
+          </form>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+  
