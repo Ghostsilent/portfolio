@@ -1,38 +1,41 @@
-<div class="contact-section">
-    <div class="contact-header">
-        <div>
-            <h1>{{'contactt' | translate }}</h1>
-        </div>
-        <div class="green-line"></div>
-    </div>
-
-    <div class="contact-content">
-        <div class="problem-description">
-            <!-- <div class="green-line"></div> -->
+<section id="contact">
+    <div class="contact-section">
+        <div class="contact-header">
             <div>
-                <h2>{{'problem' | translate }}</h2>
+                <h1>{{'contactt' | translate }}</h1>
             </div>
-            <p>
-                {{'write' | translate }}<br />
-                {{'need' | translate }} <a href="#">{{'now' | translate }}</a>
-            </p>
+            <div class="green-line"></div>
         </div>
 
-        <img src="./assets/img/purplecontact.png" alt="Background" class="background-img">
-
-
-        <div class="contact-form">
-            <form>
-                <input type="text" name="name" placeholder="Your name" required />
-                <input type="email" name="email" placeholder="Your email" required />
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <div class="privacy-policy">
-                    <input type="checkbox" id="policy" required />
-                    <label for="policy">{{'read' | translate }} <span class="privacy-policy-highlight">{{'police' | translate }}</span>{{'and' | translate }}</label>
-
+        <div class="contact-content">
+            <div class="problem-description">
+                <!-- <div class="green-line"></div> -->
+                <div>
+                    <h2>{{'problem' | translate }}</h2>
                 </div>
-                <button type="submit">{{'message' | translate }}</button>
-            </form>
+                <p>
+                    {{'write' | translate }}<br />
+                    {{'need' | translate }} <a href="#">{{'now' | translate }}</a>
+                </p>
+            </div>
+
+            <img src="./assets/img/purplecontact.png" alt="Background" class="background-img">
+
+
+            <div class="contact-form">
+                <form>
+                    <input type="text" name="name" placeholder="Your name" required />
+                    <input type="email" name="email" placeholder="Your email" required />
+                    <textarea name="message" placeholder="Your message" required></textarea>
+                    <div class="privacy-policy">
+                        <input type="checkbox" id="policy" required />
+                        <label for="policy">{{'read' | translate }} <span class="privacy-policy-highlight">{{'police' |
+                                translate }}</span>{{'and' | translate }}</label>
+
+                    </div>
+                    <button type="submit">{{'message' | translate }}</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
+</section>

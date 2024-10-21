@@ -12,9 +12,9 @@
 
   <nav class="nav" [ngClass]="{'open': isMenuOpen}">
     <ul>
-      <li><a href="#about-me">{{'about' | translate}}</a></li>
-      <li><a href="#skills">{{'skills' | translate}}</a></li>
-      <li><a href="#portfolio">{{'portfolio' | translate}}</a></li>
+      <li><a href="#about-me" (click)="closeMenu()">{{'about' | translate}}</a></li>
+      <li><a href="#skills" (click)="closeMenu()">{{'skills' | translate}}</a></li>
+      <li><a href="#portfolio" (click)="closeMenu()">{{'portfolio' | translate}}</a></li>
     </ul>
 
     <div class="language">

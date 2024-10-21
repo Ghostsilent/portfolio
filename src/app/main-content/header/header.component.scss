@@ -4,7 +4,8 @@
   align-items: center;
   padding: 37px 100px;
   background-color: #141D2F;
-  z-index: 1000; /* Sicherstellen, dass der Header über dem Inhalt liegt */
+  z-index: 1000;
+  /* Sicherstellen, dass der Header über dem Inhalt liegt */
 }
 
 .header .logo .name {
@@ -42,10 +43,10 @@
   text-underline-offset: 5px;
 }
 
-.header .language {
+/* .header .language {
   margin-right: 20px;
 }
-
+ */
 .burger-menu {
   display: none;
 }
@@ -87,7 +88,8 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; /* Sicherstellen, dass der Header über dem Inhalt liegt */
+  z-index: 1000;
+  /* Sicherstellen, dass der Header über dem Inhalt liegt */
   background-color: #141D2F;
 }
 
@@ -104,7 +106,8 @@ header {
     width: 30px;
     height: 21px;
     cursor: pointer;
-    z-index: 1100; /* Über dem Menü und Inhalt */
+    z-index: 1100;
+    /* Über dem Menü und Inhalt */
   }
 
   .burger-menu span {
@@ -124,8 +127,8 @@ header {
   .header .nav.open {
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;    
+    justify-content: center;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -152,3 +155,11 @@ header {
     overflow: hidden;
   }
 }
+
+section#about-me,
+section#skills,
+section#portfolio {
+  scroll-margin-top: 100px;
+}
+
+
