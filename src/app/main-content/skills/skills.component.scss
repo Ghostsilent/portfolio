@@ -5,7 +5,8 @@
   gap: 180px;
   box-sizing: border-box;
   overflow-x: hidden;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding-top: 20px;
 }
 
@@ -80,7 +81,7 @@ p {
 
 .skills-description {
   width: 100%;
-  /* max-width: 800px; */
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
@@ -326,4 +327,8 @@ p {
     width: 30px;
     height: 30px;
   }
+}
+
+#skills {
+  scroll-margin-top: 100px;
 }

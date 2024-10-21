@@ -1,13 +1,12 @@
 .about-me {
   position: relative;
-  /* Ermöglicht absolute Positionierung der Kinder */
   padding: 100px 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #141d2f;
   overflow: hidden;
-  /* Verhindert Überlaufen */
+  scroll-margin-top: 100px;
 }
 
 /* Standard Hintergrundkurve */
