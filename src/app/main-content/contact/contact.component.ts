@@ -9,18 +9,19 @@ import { FormsModule, NgForm } from '@angular/forms';
   standalone: true,
   imports: [TranslateModule, CommonModule, FormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
   translate = inject(TranslationService);
 
-   
-   formData = {
+  formData = {
     name: '',
     email: '',
     message: '',
     policy: false
   };
+
+  isPrivacyPolicyOpen = false;
 
   onSubmit(form: NgForm) {
     if (form.valid) {
@@ -35,10 +36,22 @@ export class ContactComponent {
         const control = form.controls[key];
         if (control.invalid) {
           control.markAsTouched();
-          return true; 
+          return true;
         }
         return false;
       });
+    }
+  }
+
+  togglePrivacyPolicy(event?: Event): void {
+    if (event) {
+      event.preventDefault(); // Verhindert das Standardverhalten des Links
+    }
+    this.isPrivacyPolicyOpen = !this.isPrivacyPolicyOpen;
+    if (this.isPrivacyPolicyOpen) {
+      document.body.classList.add('menu-open'); // Verhindert das Scrollen der Seite
+    } else {
+      document.body.classList.remove('menu-open'); // Ermöglicht das Scrollen der Seite
     }
   }
 }

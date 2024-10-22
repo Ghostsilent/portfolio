@@ -1,27 +1,67 @@
 <footer class="footer">
-    <div class="footer-line"></div>
+  <div class="footer-line"></div>
+  
+  <div class="footer-content">
+    <div class="footer-left">
+      <span class="footer-name">Salmai Safi</span>
+      <a href="#" class="footer-legal" (click)="toggleLegalNotice($event)">{{ 'footer.imprint' | translate }}</a>
+    </div>
     
-    <div class="footer-content">
-      <div class="footer-left">
-        <span class="footer-name">Salmai Safi</span>
-        <a href="#" class="footer-legal">Legal Notice</a>
-      </div>
-      
-      <div class="footer-center">
-        <span>© Salmai Safi 2024</span>
-      </div>
-      
-      <div class="footer-right">
-        <a href="#" class="social-icon">
-          <img src="./assets/img/giticon.png" alt="GitHub">
-        </a>
-        <a href="#" class="social-icon">
-          <img src="./assets/img/mailicon.png" alt="Email">
-        </a>
-        <a href="#" class="social-icon">
-          <img src="./assets/img/inicon.png" alt="LinkedIn">
-        </a>
+    <div class="footer-center">
+      <span>{{ 'footer.copy_right' | translate }}</span>
+    </div>
+    
+    <div class="footer-right">
+      <a href="#" class="social-icon">
+        <img src="./assets/img/giticon.png" alt="GitHub">
+      </a>
+      <a href="#" class="social-icon">
+        <img src="./assets/img/mailicon.png" alt="Email">
+      </a>
+      <a href="#" class="social-icon">
+        <img src="./assets/img/inicon.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
+
+  <!-- Legal Notice Overlay -->
+  <div class="legal-notice-overlay" *ngIf="isLegalNoticeOpen">
+    <div class="legal-notice-content">
+      <button class="close-button" (click)="toggleLegalNotice()">&times;</button>
+      <h2>{{ 'footer.legal_notice_title' | translate }}</h2>
+      <div class="impressum">
+        <p>{{ 'footer.imprint_info' | translate }}</p>
+        <p>
+          Salmai Safi <br> 
+          Meißelstr. 21<br> 
+          45141 Essen <br>
+        </p>
+        <p><strong>{{ 'footer.represented_by' | translate }}</strong><br>
+          Salmai Safi<br>
+        </p>
+        <p><strong>{{ 'footer.contact' | translate }}</strong><br>
+          Telefon: 0176-458416545<br>
+          E-Mail: <a href="mailto:salmai_boy@hotmail.de">salmai_boyhotmail.de</a>
+        </p>
+        <p><strong>{{ 'footer.disclaimer' | translate }}</strong><br><br>
+          <strong>{{ 'footer.copyright' | translate }}</strong><br><br>
+          {{ 'footer.copyright_content' | translate }}
+          <br><br>
+          <strong>{{ 'footer.privacy' | translate }}</strong><br><br>
+          {{ 'footer.privacy_content' | translate }}
+          <br>
+          {{ 'footer.privacy_content_continued' | translate }}
+          <br>
+          {{ 'footer.privacy_content_continued2' | translate }}
+          <br><br>
+          <strong>{{ 'footer.google_analytics' | translate }}</strong><br><br>
+          {{ 'footer.google_analytics_content' | translate }}
+        </p>
+        <p>
+          <br> 
+          {{ 'footer.imprint_footer' | translate }} <a href="https://www.impressum-generator.de">{{ 'footer.imprint_footer_link' | translate }}</a> {{ 'footer.imprint_footer_connector' | translate }} <a href="https://www.kanzlei-hasselbach.de/" rel="nofollow">{{ 'footer.imprint_footer_link2' | translate }}</a>
+        </p>
       </div>
     </div>
-  </footer>
-  
+  </div>
+</footer>

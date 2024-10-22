@@ -1,99 +1,134 @@
 <section id="contact">
-    <div class="contact-section">
-      <div class="contact-header">
-        <div>
-          <h1>{{ 'contactt' | translate }}</h1>
-        </div>
-        <div class="green-line"></div>
+  <div class="contact-section">
+    <div class="contact-header">
+      <div>
+        <h1>{{ 'contactt' | translate }}</h1>
       </div>
-  
-      <div class="contact-content">
-        <div class="problem-description">
-          <!-- Dein bestehender Inhalt -->
-          <div>
-            <h2>{{ 'problem' | translate }}</h2>
+      <div class="green-line"></div>
+    </div>
+
+    <div class="contact-content">
+      <div class="problem-description">
+        <!-- Dein bestehender Inhalt -->
+        <div>
+          <h2>{{ 'problem' | translate }}</h2>
+        </div>
+        <p>
+          {{ 'write' | translate }}<br />
+          {{ 'need' | translate }} <a href="#">{{ 'now' | translate }}</a>
+        </p>
+      </div>
+
+      <img src="./assets/img/purplecontact.png" alt="Background" class="background-img" />
+
+      <div class="contact-form">
+        <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+          <!-- Name Eingabefeld -->
+          <input
+            type="text"
+            name="name"
+            placeholder="{{ 'your_name_placeholder' | translate }}"
+            required
+            [(ngModel)]="formData.name"
+            #name="ngModel"
+            [class.invalid]="name.invalid && name.touched"
+          />
+          <!-- Fehlermeldung für Name -->
+          <div class="error-message" *ngIf="name.invalid && name.touched">
+            {{ 'name_error' | translate }}
           </div>
-          <p>
-            {{ 'write' | translate }}<br />
-            {{ 'need' | translate }} <a href="#">{{ 'now' | translate }}</a>
-          </p>
-        </div>
-  
-        <img src="./assets/img/purplecontact.png" alt="Background" class="background-img" />
-  
-        <div class="contact-form">
-          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
-            <!-- Name Eingabefeld -->
+
+          <!-- E-Mail Eingabefeld -->
+          <input
+            type="email"
+            name="email"
+            placeholder="{{ 'your_email_placeholder' | translate }}"
+            required
+            email
+            [(ngModel)]="formData.email"
+            #email="ngModel"
+            [class.invalid]="email.invalid && email.touched"
+          />
+          <!-- Fehlermeldung für E-Mail -->
+          <div class="error-message" *ngIf="email.invalid && email.touched">
+            {{ 'email_error' | translate }}
+          </div>
+
+          <!-- Nachricht Eingabefeld -->
+          <textarea
+            name="message"
+            placeholder="{{ 'your_message_placeholder' | translate }}"
+            required
+            [(ngModel)]="formData.message"
+            #message="ngModel"
+            [class.invalid]="message.invalid && message.touched"
+          ></textarea>
+          <!-- Fehlermeldung für Nachricht -->
+          <div class="error-message" *ngIf="message.invalid && message.touched">
+            {{ 'message_error' | translate }}
+          </div>
+
+          <!-- Datenschutzrichtlinie Checkbox -->
+          <div class="privacy-policy">
             <input
-              type="text"
-              name="name"
-              placeholder="Your name"
+              type="checkbox"
+              id="policy"
               required
-              [(ngModel)]="formData.name"
-              #name="ngModel"
-              [class.invalid]="name.invalid && name.touched"
+              [(ngModel)]="formData.policy"
+              name="policy"
+              #policy="ngModel"
             />
-            <!-- Fehlermeldung für Name -->
-            <div class="error-message" *ngIf="name.invalid && name.touched">
-              Bitte Name eingeben.
-            </div>
-  
-            <!-- E-Mail Eingabefeld -->
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              email
-              [(ngModel)]="formData.email"
-              #email="ngModel"
-              [class.invalid]="email.invalid && email.touched"
-            />
-            <!-- Fehlermeldung für E-Mail -->
-            <div class="error-message" *ngIf="email.invalid && email.touched">
-              Bitte eine gültige E-Mail-Adresse eingeben.
-            </div>
-  
-            <!-- Nachricht Eingabefeld -->
-            <textarea
-              name="message"
-              placeholder="Your message"
-              required
-              [(ngModel)]="formData.message"
-              #message="ngModel"
-              [class.invalid]="message.invalid && message.touched"
-            ></textarea>
-            <!-- Fehlermeldung für Nachricht -->
-            <div class="error-message" *ngIf="message.invalid && message.touched">
-              Bitte Nachricht eingeben.
-            </div>
-  
-            <!-- Datenschutzrichtlinie Checkbox -->
-            <div class="privacy-policy">
-              <input
-                type="checkbox"
-                id="policy"
-                required
-                [(ngModel)]="formData.policy"
-                name="policy"
-                #policy="ngModel"
-              />
-              <label for="policy">
-                {{ 'read' | translate }}
-                <span class="privacy-policy-highlight">{{ 'police' | translate }}</span>
-                {{ 'and' | translate }}
-              </label>
-            </div>
-            <!-- Fehlermeldung für Datenschutzrichtlinie -->
-            <div class="error-message" *ngIf="policy.invalid && policy.touched">
-              Bitte akzeptiere die Datenschutzrichtlinie.
-            </div>
-  
-            <!-- Absende-Button -->
-            <button type="submit">{{ 'message' | translate }}</button>
-          </form>
-        </div>
+            <label for="policy">
+              {{ 'privacy_policy_agreement_1' | translate }}
+              <span class="privacy-policy-highlight" (click)="togglePrivacyPolicy($event)">{{ 'privacy_policy' | translate }}</span>
+              {{ 'privacy_policy_agreement_2' | translate }}
+            </label>
+          </div>
+          <!-- Fehlermeldung für Datenschutzrichtlinie -->
+          <div class="error-message" *ngIf="policy.invalid && policy.touched">
+            {{ 'privacy_policy_error' | translate }}
+          </div>
+
+          <!-- Absende-Button -->
+          <button type="submit">{{ 'submit_button' | translate }}</button>
+        </form>
       </div>
     </div>
-  </section>
-  
+  </div>
+
+  <!-- Datenschutzrichtlinie Overlay -->
+  <div class="privacy-policy-overlay" *ngIf="isPrivacyPolicyOpen">
+    <div class="privacy-policy-content">
+      <button class="close-button" (click)="togglePrivacyPolicy()">&times;</button>
+      <h2>{{ 'privacy_policy_title' | translate }}</h2>
+      <div class="privacy-content">
+        <p>
+          <strong>{{ 'privacy_policy_section1_title' | translate }}</strong>
+        </p>
+        <p>
+          {{ 'privacy_policy_section1_content' | translate }}
+        </p>
+        <p>
+          <strong>{{ 'privacy_policy_section2_title' | translate }}</strong><br>
+          {{ 'privacy_policy_section2_content' | translate }}
+        </p>
+        <p>
+          <strong>{{ 'privacy_policy_section3_title' | translate }}</strong><br>
+          {{ 'privacy_policy_section3_content' | translate }}
+        </p>
+        <p>
+          <strong>{{ 'privacy_policy_section4_title' | translate }}</strong><br>
+          {{ 'privacy_policy_section4_content' | translate }}
+        </p>
+        <p>
+          <strong>{{ 'privacy_policy_section5_title' | translate }}</strong><br>
+          {{ 'privacy_policy_section5_content' | translate }}
+        </p>
+        <p>
+          <br>
+          {{ 'privacy_policy_footer' | translate }} <a href="https://www.privacypolicy-generator.de">{{ 'privacy_policy_footer_link_text' | translate }}</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

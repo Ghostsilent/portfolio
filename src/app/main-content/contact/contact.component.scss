@@ -78,7 +78,6 @@
   }
 }
 
-
 @media (max-width: 350px) {
   .contact-header h1 {
     font-size: 55px;
@@ -193,10 +192,30 @@
   font-size: 0.9rem;
   color: white;
   transition: color 0.5s;
+  cursor: pointer;
 }
 
 .privacy-policy label:hover {
   color: #70E61C;
+}
+
+.privacy-policy-highlight {
+  color: #9747FF; /* Lila Farbe */
+  animation: highlight-pulse 2s infinite alternate;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes highlight-pulse {
+  0% {
+    color: #9747FF;
+  }
+  50% {
+    color: #70E61C;
+  }
+  100% {
+    color: #ff6ec7;
+  }
 }
 
 .privacy-policy input[type="checkbox"] {
@@ -248,23 +267,6 @@
   transform: scale(1.05);
 }
 
-.privacy-policy-highlight {
-  color: #9747FF; /* Lila Farbe */
-  animation: highlight-pulse 2s infinite alternate;
-}
-
-@keyframes highlight-pulse {
-  0% {
-    color: #9747FF;
-  }
-  50% {
-    color: #70E61C;
-  }
-  100% {
-    color: #ff6ec7;
-  }
-}
-
 .error-message {
   color: red;
   font-size: 0.9rem;
@@ -272,8 +274,76 @@
   margin-bottom: 10px;
 }
 
-
 input.invalid,
 textarea.invalid {
   border-color: red;
+}
+
+/* Datenschutzrichtlinie Overlay Styling */
+.privacy-policy-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Halbtransparenter schwarzer Hintergrund */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Über anderem Inhalt */
+  transition: opacity 0.3s ease;
+}
+
+.privacy-policy-content {
+  background-color: #1E2A3A;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px; /* Mehr Platz für Inhalte */
+  max-height: 90vh;
+  overflow-y: auto; /* Scroll bei Überlauf */
+  position: relative;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+
+  h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #70E61C;
+    text-align: center;
+  }
+
+  .privacy-content {
+    font-size: 16px;
+    line-height: 1.6;
+
+    a {
+      color: #70E61C;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    strong {
+      color: #ffffff;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #70E61C;
+    }
+  }
 }

@@ -177,22 +177,24 @@ p {
     display: none;
   }
 
-  .logos-container-mobile .logo-item.firebase,
-  .logos-container-mobile .logo-item.git {
-    right: 18px;
-  }
-
-  .skills-content {
-    margin-bottom: 25px;
-  }
-  
-
   .logos-container-mobile {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    justify-items: center; // Zentriert die Logos innerhalb der Zellen
+  }
+
+  .logo-group {
+    display: contents; // Ignoriert die Gruppenstruktur im Grid
+  }
+
+  .logo-item {
+    text-align: center;
   }
 
   .skills-section {
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -237,10 +239,6 @@ p {
     height: 3px;
   }
 
-  .logo-group {
-    gap: 40px;
-  }
-
   .logo-item img {
     width: 50px;
     height: 50px;
@@ -252,6 +250,7 @@ p {
     font-size: 20px;
   }
 }
+
 
 @media (min-width: 1076px) {
   .logos-container-mobile {
@@ -312,6 +311,21 @@ p {
     width: 35px;
     height: 35px;
   }
+
+  .logos-container-mobile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    gap: 20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    justify-items: center; // Zentriert die Logos innerhalb der Zellen
+  }
+}
+
+@media (max-width: 340px) {
+  .skills-heading h1 {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -327,8 +341,4 @@ p {
     width: 30px;
     height: 30px;
   }
-}
-
-#skills {
-  scroll-margin-top: 100px;
 }
