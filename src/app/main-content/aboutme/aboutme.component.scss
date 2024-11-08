@@ -76,7 +76,7 @@
     p {
       display: flex;
       align-items: center;
-      font-size: 1.2rem;
+      font-size: 16px;
       margin-bottom: 15px;
 
       .icon {
@@ -103,7 +103,7 @@
     transform: translateX(10%);
     position: relative;
     z-index: 1;
-    max-width: 430px;
+    max-width: 580px;
     top: 50%;
   }
 
@@ -149,7 +149,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .about-me {
     padding: 50px 40px;
   }
